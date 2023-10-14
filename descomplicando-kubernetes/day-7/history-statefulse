@@ -1,0 +1,179 @@
+ 90  mkdir day-7
+   91  cd day-7/
+   92  vi statefulset-nginx.yml
+   93  vi statefulset-nginx.yml
+   94  kubectl apply -f statefulset-nginx.yml
+   95  vi statefulset-nginx.yml
+   96  kubectl apply -f statefulset-nginx.yml
+   97  vi statefulset-nginx.yml
+   98  kubectl apply -f statefulset-nginx.yml
+   99  vi statefulset-nginx.yml
+  100  kubectl apply -f statefulset-nginx.yml
+  101  kubectl get statefulset
+  102  kubectl get statefulset -o
+  103  kubectl get statefulset -w
+  104  kubectl get pofs
+  105  kubectl get pods
+  106  kubectl get pods -a
+  107  kubectl get pods -A
+  108  kubectl get statefulset -w
+  109  kubectl get nodes
+  110  kubectl get pods
+  111  kubectl get statefulset -w
+  112*
+  113  kubectl destroy -f statefulset-nginx.yml
+  114  kubectl delete -f statefulset-nginx.yml
+  115  cd ..
+  116  ls
+  117  cd day-
+  118  cd day-6
+  119  ls
+  120  kubectl get pv
+  121  ls ..
+  122* kubectl run giropops --image=nginx --port=80\
+  123  kubectl get pods
+  124  kubectl get nodes
+  125  kubectl lofs giropops
+  126  kubectl logs giropops
+  127  kubectl describe pod giropops
+  128  echo $KUBECONFIG
+  129  cat ~/.kube/config
+  130  kubectl delete pod giropops
+  131  kubectl delete -f statefulset-nginx.yml
+  132  cd ../day-7
+  133  kubectl apply -f statefulset-nginx.yml
+  134  kubectl get pods
+  135  vi statefulset-nginx.yml
+  136  kubectl delete -f statefulset-nginx.yml
+  137  kubectl get pods
+  138  kubectl apply -f statefulset-nginx.yml
+  139  kubectl get pods
+  140  kubectl get pods -o
+  141  kubectl get pods -w
+  142  kubectl logs nginx
+  143  kubectl logs pods nginx
+  144  kubectl logs nginx
+  145  kubectl get pods -w
+  146  kubectl describe pod nginx-0
+  147  kubectl get storageclass
+  148  cp ../day-6/pv.yml .
+  149  vi pv.yml
+  150  vi statefulset-nginx.yml
+  151  vi pv.yml
+  152  kubectl apply -f pv.yml
+  153  kubectl get pv
+  154  vi statefulset-nginx.yml
+  155  kubectl get pv
+  156  kubectl get pods
+  157  kubectl delete -f statefulset-nginx.yml
+  158  kubectl apply -f statefulset-nginx.yml
+  159  kubectl describe nginx-0
+  160  kubectl describe pods nginx-0
+  161  vi pvc.yml
+  162  kubectl get storageclass
+  163  vi pvc.yml
+  164  kubectl apply -f pvc.yml
+  165  kubectl get pvc
+  166  kubectl describe pvc nginx-persistent-storage-nginx-0
+  167* kubectl describe  nginx-persistent-storage
+  168  kubectl delete -f statefulset-nginx.yml
+  169  kubectl apply -f statefulset-nginx.yml
+  170  kubectl get pods
+  171  kubectl get pvc
+  172  kubectl describe pods nginx-0
+  173  kubectl describe pvc nginx-persistent-storage-nginx-0
+  174  kubectl get pv
+  175  kubectl describe pv nginx-persistent-storage
+  176  vi pv.yml
+  177  kubectl apply -f pv.yml
+  178  kubectl describe pv nginx-persistent-storage
+  179  kubectl delete -f statefulset-nginx.yml
+  180  kubectl apply -f statefulset-nginx.yml
+  181  kubectl get pods
+  182  kubectl describe pods nginx-0
+  183  kubectl describe pvc nginx-persistent-storage-nginx-0
+  184  kubectl get storageclass
+  185  kubectl describe storageclass giropops
+  186  kubectl get pvs
+  187  kubectl get pvc
+  188  kubectl delete -f statefulset-nginx.yml
+  189  kubectl delete -f pv.yml
+  190  kubectl delete -f pvc.yml
+  191  kuebctl get pvc
+  192  kubectl get pvc
+  193  kubectl delete pvc nginx-persistent-storage-nginx-0
+  194  cp ../day-6/storageclass.yaml .
+  195  vi storageclass.yaml
+  196  cat statefulset-nginx.yml
+  197  vi storageclass.yaml
+  198  kubectl apply -f storageclass.yaml
+  199  kubectl get storageclass
+  200  kubectl apply -f statefulset-nginx.yml
+  201  kubectl get pods
+  202  kubectl get pvc
+  203  kubectl describe pvc nginx-persistent-storage-nginx-0
+  204  vi storageclass.yaml
+  205  kubectl describe storageclass standard
+  206  kubectl get storageclass
+  207  kubectl describe storageclass giropops -o yaml > giropops.yml
+  208  kubectl describe storageclass giropops -output yaml > giropops.yml
+  209  kubectl describe --help
+  210  kubectl describe storageclass giropops
+  211  kubectl create storageclass default -o yaml --dry-run
+  212  kubectl get storageclass giropops -o yaml > giropos.yml
+  213  cat giropo
+  214  cat giropops.yml
+  215  ls
+  216  rm giropo*
+  217  kubectl get storageclass giropops -o yaml > giropops.yml
+  218  cat giropops.yml
+  219  kubectl patch storageclass giropops -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
+  220  kubectl describe storageclass standard
+  221  kubectl describre storageclass giropops
+  222  kubectl describe storageclass giropops
+  223  kubectl describe storageclass standard
+  224  kubectl get pods
+  225  kubectl delete -f statefulset-nginx.yml
+  226  kubectl delete pvc nginx-persistent-storage-nginx-0
+  227  kubectl apply -f statefulset-nginx.yml
+  228  kubectl get pods
+  229  kubectl describre pod nginx-1
+  230  kubectl describe pod nginx-1
+  231  kubectl get pvc
+  232  kubectl get pv
+  233  vi pv.yml
+  234  kubectl apply -f pv.yml
+  235  kubectl delete -f statefulset-nginx.yml
+  236  kubectl delete pvc nginx-persistent-storage-nginx-0
+  237  kubectl delete pvc nginx-persistent-storage-nginx-1
+  238  kubectl apply -f statefulset-nginx.yml
+  239  kubectl get pods
+  240  kubectl describe pod nginx-0
+  241  kubectl get pv
+  242  kubectl describe pod nginx-0
+  243  vi statefulset-nginx.yml
+  244  kubectl apply -f statefulset-nginx.yml
+  245  kubectl get pv
+  246  kubectl describe pod nginx-0
+  247  kubectl delete pvc nginx-persistent-storage-nginx-1
+  248  kubectl delete pvc nginx-persistent-storage-nginx-0
+  249  kubectl delete -f statefulset-nginx.yml
+  250  kubectl get pv
+  251  kubectl delete -f pv.yml
+  252  kubectl delete -f ../day-6/pv.yml
+  253  kubectl get pv
+  254  kubectl get storageclass
+  255  kubectl describe storageclass standard
+  256  kubectl describre storageclass giropops
+  257  kubectl describe storageclass giropops
+  258  kubectl get pods
+  259  kubectl get storageclass
+  260  kubectl get pvc
+  261  kubectl delete pvc nginx-persistent-storage-nginx-0
+  262  kubectl get pvc
+  263  kubectl apply -f ../day-6/pv.yml
+  264  kubectl apply -f pv.yml
+  265  kubectl apply -f statefulset-nginx.yml
+  266  kubectl get pofs
+  267  kubectl get pods
+
