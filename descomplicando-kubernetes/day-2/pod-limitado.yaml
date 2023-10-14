@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: giropops
+  name: giropops
+spec:
+  containers:
+  - image: ubuntu
+    name: ubuntu
+    resources: 
+      limits:
+        cpu: "0.5"
+        memory: "128Mi"
+      requests:
+        cpu: "0.3"
+        memory: "64Mi"
+    args: 
+    - sleep
+    - "1200"
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
