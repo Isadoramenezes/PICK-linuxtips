@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: giropops-senhas
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: giropops-senhas
+  template:
+    metadata:
+      labels:
+        app: giropops-senhas
+    spec:
+      containers:
+      - name: giropops-senhas
+        image: isadora/linuxtips-giropops-senhas:1.0
+        ports: 
+        - containerPort: 8888
+          name: giropos-port
+          hostPort: 8888
+        resources:
+          limits:
+            cpu: 0.5
+            memory: 256Mi
+          requests:
+            cpu: 0.3
+            memory: 64Mi
+        env:
+        - name: REDIS_HOST
+          value: "redis-headless-svc"
+
