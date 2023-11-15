@@ -1,0 +1,32 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: giropops-senhas-canary
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+      # nginx.ingress.kubernetes.io/auth-type: "basic"
+      #    nginx.ingress.kubernetes.io/auth-secret: "giropops-senhas-user"
+      #    nginx.ingress.kubernetes.io/auth-realm: "Qual a palavra magica?"
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+      #    nginx.ingress.kubernetes.io/affinity: "cookie"
+      #nginx.ingress.kubernetes.io/session-cookie-name: "giropops-cookie"
+      #nginx.ingress.kubernetes.io/upstream-hash-by: "$request_uri"
+    nginx.ingress.kubernetes.io/canary: "true"
+    nginx.ingress.kubernetes.io/canary-weight: "10"
+spec:
+  ingressClassName: nginx
+  tls: 
+  - hosts: 
+    - giropops.ibmenezes.com
+    secretName: "giropops-container-expert-tls"
+  rules:
+  - host: giropops.ibmenezes.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: nginx
+            port:
+              number: 80 
