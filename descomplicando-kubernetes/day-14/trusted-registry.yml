@@ -1,0 +1,22 @@
+apiVersion: kyverno.io/v1
+kind: Policy
+metadata:
+  name: ensure-images-from-trusted-registry
+  namespace: giropops
+spec:
+  validationFailureAction: Enforce
+  rules:
+  - name: trusted-registry
+    match:
+      resources:
+        kinds:
+        - Pod
+    validate:
+      message: "Somente imagens do repo da chainguard"
+      pattern:
+        spec:
+          containers:
+          - name: "*"
+            image: "cgr.dev/chainguard/*"
+
+
